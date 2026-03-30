@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
 <title>Course Management</title>
@@ -11,7 +12,7 @@
 
     <div class="d-flex justify-content-between mb-3">
         <h2>Course Management System</h2>
-        <a href="add" class="btn btn-primary">+ Add Course</a>
+        <a href="${pageContext.request.contextPath}/add" class="btn btn-primary">+ Add Course</a>
     </div>
 
     <div class="card shadow p-3">
@@ -33,8 +34,10 @@
                         <td>${c.instructor}</td>
 
                         <td>
-                            <a href="edit?id=${c.id}" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="delete?id=${c.id}" 
+                            <a href="${pageContext.request.contextPath}/edit?id=${c.id}" 
+                               class="btn btn-warning btn-sm">Edit</a>
+
+                            <a href="${pageContext.request.contextPath}/delete?id=${c.id}" 
                                class="btn btn-danger btn-sm"
                                onclick="return confirm('Delete this course?')">
                                Delete
